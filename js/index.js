@@ -82,10 +82,8 @@ function renderTasks() {
         <li id='${task.id}' class="to-do__task ${task.completed ? 'checked': ''}">
             <input type="checkbox" onChange="checkTask(this)" ${task.completed ? 'checked' : ''}>
             <p>${task.title}</p>
-            <div to-do__item-options>
-                <button onclick="editTask(this)">Editar</button>
-                <button onclick="removeTask(this)">Excluir</button>
-            </div>
+            <button onclick="editTask(this)">Editar</button>
+            <button onclick="removeTask(this)">Excluir</button>
         </li>
         `
     });
