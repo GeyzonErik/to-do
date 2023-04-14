@@ -1,0 +1,20 @@
+*, 
+*:after,
+*:before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+:root {
+    --gradient: linear-gradient(to right bottom, #3a833d, #008466);
+
+    --first-color: #4caf50;
+
+    --text-color: #000;
+}

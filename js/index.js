@@ -63,7 +63,6 @@ function checkTask(event) {
     listOfTasks.forEach(task => {
         if(task.id === parseInt(event.parentElement.id)) {
             task.completed = event.checked;
-            console.log(task);
         }
     })
     localStorage.setItem('tasks', JSON.stringify(listOfTasks));
@@ -79,11 +78,15 @@ function renderTasks() {
     listOfTasks.forEach(task => {
         toDoList.innerHTML += 
         `
-        <li id='${task.id}' class="to-do__task ${task.completed ? 'checked': ''}">
-            <input type="checkbox" onChange="checkTask(this)" ${task.completed ? 'checked' : ''}>
-            <p>${task.title}</p>
-            <button onclick="editTask(this)">Editar</button>
-            <button onclick="removeTask(this)">Excluir</button>
+        <li id='${task.id}' class="to-do__task">
+            <div class="${task.completed ? 'checked': ''}">
+                <input type="checkbox" onChange="checkTask(this)" ${task.completed ? 'checked' : ''}>
+                <p>${task.title}</p>
+            </div>
+            <div id='${task.id}'>
+                <button onclick="editTask(this)"><img src="./assets/images/edit-3.svg" style="width: 1.3rem"/></button>
+                <button onclick="removeTask(this)"><img src="./assets/images/trash.svg" style="width: 1.3rem" /></button>
+            </div>
         </li>
         `
     });
